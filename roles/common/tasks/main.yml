@@ -4,7 +4,7 @@
 #
 
 - name: Check connectivity
-  ping:
+  ansible.builtin.ping:
     data: alive
   tags: check
 
