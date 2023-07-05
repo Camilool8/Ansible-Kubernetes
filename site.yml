@@ -1,7 +1,3 @@
 ---
 - name: Import anygroup playbook
-  import_playbook: anygroup.yml
-
-# Import all other group playbooks in this file...
-
-...
+  import_playbook: kubeslice.yml

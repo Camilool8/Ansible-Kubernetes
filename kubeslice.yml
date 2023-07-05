@@ -1,0 +1,7 @@
+---
+- name: Install kubeslice-cli
+  hosts: ubuntu
+  become: true
+  roles:
+    - kubernetes
+    - kubeslice-cli
