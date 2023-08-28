@@ -1,0 +1,8 @@
+---
+- name: Install tools on MacOS
+  hosts: macos
+  gather_facts: true
+  become: false
+
+  roles:
+    - macos_tools

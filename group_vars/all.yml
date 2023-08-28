@@ -2,7 +2,9 @@
 # Default is to log in as root
 ansible_user: root
 ansible_remote_user: root
-
-# Add further variables which apply to all servers to this file...
-
-...
+homebrew_packages:
+  - name: kubectl
+  - name: helm
+  - name: azure-cli
+  - name: docker
+  - name: kubectx
