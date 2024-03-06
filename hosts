@@ -19,7 +19,7 @@ server4     ansible_host=192.168.0.4
 server1     ansible_host=192.168.0.5
 
 [macos]
-server1     ansible_host=192.168.86.192 ansible_user=cjoga ansible_ssh_pass=1702
+server1     ansible_host=192.168.86.192 ansible_user=cjoga ansible_ssh_pass=2222
 
 # Add your own groups here. Hosts can be added to multiple groups like so:
 # [anothergroup]

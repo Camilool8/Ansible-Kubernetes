@@ -9,10 +9,12 @@ homebrew_packages:
   - name: kubectl
   - name: helm
   - name: azure-cli
-  - name: kubectx
   - name: awscli
   - name: git
   - name: go
+  - name: ansible
+  - name: ansible-lint
+  - name: terraform
 homebrew_casks:
   - name: docker
   - name: visual-studio-code
