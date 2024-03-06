@@ -2,9 +2,22 @@
 # Default is to log in as root
 ansible_user: root
 ansible_remote_user: root
+git_user_name: "John Doe"
+git_user_email: ""
+homebrew_install_script: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 homebrew_packages:
   - name: kubectl
   - name: helm
   - name: azure-cli
-  - name: docker
   - name: kubectx
+  - name: awscli
+  - name: git
+  - name: go
+homebrew_casks:
+  - name: docker
+  - name: visual-studio-code
+  - name: google-chrome
+  - name: zoom
+  - name: microsoft-teams
+  - name: postman
+  - name: spotify

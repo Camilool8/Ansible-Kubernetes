@@ -1,6 +1,41 @@
----
+- name: Check if Homebrew is installed
+  ansible.builtin.command: which brew
+  register: homebrew_installed
+  ignore_errors: true
+  changed_when: false
+
+- name: Install Homebrew
+  ansible.builtin.command: "{{ homebrew_install_script }}"
+  changed_when: false
+  when: homebrew_installed.rc != 0
+
+- name: Update Homebrew
+  ansible.builtin.command: brew update
+  changed_when: false
+  when: homebrew_installed.rc == 0
+
 - name: Install Homebrew packages
   community.general.homebrew:
     name: "{{ item.name }}"
     state: present
   loop: "{{ homebrew_packages }}"
+  when: homebrew_packages is defined
+
+- name: Install Hombrews with cask
+  community.general.homebrew_cask:
+    name: "{{ item.name }}"
+    state: present
+  loop: "{{ homebrew_casks }}"
+  when: homebrew_casks is defined
+
+- name: Configure Git user name
+  community.general.git_config:
+    name: user.name
+    value: "{{ git_user_name }}"
+    scope: global
+
+- name: Configure Git user email
+  community.general.git_config:
+    name: user.email
+    value: "{{ git_user_email }}"
+    scope: global
